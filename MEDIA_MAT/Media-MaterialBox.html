@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="mmb.css">
+
+    <title>Media-Material Box</title>
+</head>
+<body>
+    <h1 class = "red-text text-lighten-2 center">Media</h1>
+    <div class="divider" ></div>
+    <div class = " container">
+        <div>
+            <p class = "caption">Media components include things that have to do with large media objects like Images, Video, Audio, etc.</p>
+            <br>
+            <div>
+                <h3 class = "red-text text-lighten-2 ">Material Box</h3>
+                <p class = "caption">Material box is a material design implementation of the Lightbox plugin. When a user clicks on an image that can
+                    be enlarged, Material box centers the image and enlarges it in a smooth, non-jarring manner. To dismiss the image,
+                    the user can either click on the image again, scroll away, or press the ESC key.</p>
+                    <div class = "material-placeholder">
+                        <img class="materialboxed" width="650" src="aj.jpg">
+                    </div>
+                    <p>"Creating the above image with the effect is as simple as adding a
+                    "
+                    <code class = "language-markup">materializedboxed
+                    </code>
+                    " class to the image tag. "
+                    </p>
+                    <style>
+                        .card {
+                    border: 1px solid rgb(255, 255, 255);
+                    border-radius: 5px;
+                    padding: 30px;
+                    width: 650px;
+                    height:auto;
+                    overflow-x: auto;
+                }
+                    </style>
+                    <div class = "card">
+                        <pre class = "green-text text-darken-2">
+                            <code class ="text-flow" >
+    &lt;img class="materialboxed" width="650" src="images/sample-1.jpg"&gt;
+                            </code>
+                    </pre>
+                    </div>
+                    <div>
+                        <h4>Initialization</h4>
+                        <div class = "card">
+                            <pre>
+                                <code>
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+});
+
+        // Or with jQuery
+    $(document).ready(function(){
+    $('.materialboxed').materialbox();
+    });
+&lt;/script&gt;
+
+                                </code>
+                            </pre>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Option</h4>
+                        <table class = "striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Default</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inDuration</td>
+                                    <td>Number</td>
+                                    <td>275</td>
+                                    <td>Transition in duration in milliseconds.</td>
+                                </tr>
+                                <tr>
+                                    <td>outDuration</td>
+                                    <td>Number</td>
+                                    <td>200</td>
+                                    <td>Transition in duration in milliseconds.</td>
+                                </tr>
+                                <tr>
+                                    <td>onOpenStart</td>
+                                    <td>Function</td>
+                                    <td>null</td>
+                                    <td>Callback function called before materialbox is opened.</td>
+                                </tr>
+                                <tr>
+                                    <td>onOpenEnd</td>
+                                    <td>Function</td>
+                                    <td>null</td>
+                                    <td>Callback function called after materialbox is opened.</td>
+                                </tr>
+                                <tr>
+                                    <td>onCloseStart</td>
+                                    <td>Function</td>
+                                    <td>null</td>
+                                    <td>Callback function called before materialbox is closed.</td>
+                                </tr>
+                                <tr>
+                                    <td>onCloseEnd</td>
+                                    <td>Function</td>
+                                    <td>null</td>
+                                    <td>Callback function called after materialbox is closed.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <br><br>
+                        <h4>Methods</h4>
+                        <blockquote>
+                            <p>Because jQuery is no longer a dependency, all the methods are called on the plugin instance. You can get the plugin
+                                instance like this: </p>
+                    <pre class = "card text-flow">
+                        <p2 class = "blue-text">
+    var instance = M.Materialbox.getInstance(elem);
+        </p2><p3 class = "blue-grey-text">
+    /* jQuery Method Calls
+        You can still use the old jQuery plugin method calls.
+        But you won't be able to access instance properties.
+
+        $('.materialboxed').materialbox('methodName');
+        $('.materialboxed').materialbox('methodName', paramName);
+    */
+            </p3>
+            
+                    </pre>
+                        </blockquote>
+                        <br>
+
+                        <h5 class = "method-header">.open()</h5>
+                        <p>Open materialbox</p>
+                        <style>
+                            .card1 {
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 20px;
+                    width: 650px;
+                    height:auto;
+                    overflow-x: auto;
+                    }
+                        </style>
+                        <pre class = "card1 blue-text">
+        instance.open(); 
+                        </pre>
+                        <br>
+                        <br>
+                    <h5 class = "method-header">.close()</h5>
+                    <p>Close materialbox</p>
+                    <pre class = "card1 red-text text-lighten">
+        instance.close(); 
+                        </pre>
+                        <br>
+                        <br>
+                        <h5 class = "method-header">.destroy()</h5>
+                    <p>Close materialbox</p>
+                    <pre class = "card1 red-text text-lighten">
+        instance.destroy(); 
+                        </pre>
+                        <br>
+                        <br>
+
+                    </div>
+                    <div>
+                        <h4>Properties</h4>
+                        <table class="striped">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>el</td>
+                                <td>Element</td>
+                                <td>The DOM element the plugin was initialized with.</td>
+                            </tr>
+                            <tr>
+                                <td>options</td>
+                                <td>Object</td>
+                                <td>The options the instance was initialized with.</td>
+                            </tr>
+                            <tr>
+                                <td>overlayActive</td>
+                                <td>Boolean</td>
+                                <td>If the materialbox overlay is showing.</td>
+                            </tr>
+                            <tr>
+                                <td>doneAnimating</td>
+                                <td>Boolean</td>
+                                <td>If the carousel is no longer being animated.</td>
+                            </tr>
+                            <tr>
+                                <td>caption</td>
+                                <td>String</td>
+                                <td>Caption if specified.</td>
+                            </tr>
+                            <tr>
+                                <td>originalWidth</td>
+                                <td>Number</td>
+                                <td>Original width of image.</td>
+                            </tr>
+                            <tr>
+                                <td>originalHeight</td>
+                                <td>Number</td>
+                                <td>Original height of image.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <h4>Captions</h4>
+                        <p>It is very easy to add a short caption to your photo. Just add the caption as a
+                            <code class=" language-markup">data-caption</code> attribute.</p>
+                            <pre class = "card green-text text-darken-3">
+    &lt;img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" src="https://lorempixel.com/800/400/nature/4"&gt;
+                            </pre>
+                    </div>
+                    <br>
+                    <br>
+                    <h3 class="red-text text-lighten-2">Slider</h3>
+                    <p class="caption">Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their
+                        own depending on their alignment. You can also have indicators that show up on the bottom of the slider. </p>
+                        <br>      
+                    <div class="slider">
+                        <ul class="slides">
+                            <li>
+                                <img src="aj.jpg" alt="">
+                                <div class="caption-align"></div><h3>this is out tagline</h3>
+                                <h5 class="ligh grey-text text0lighten-3">here's our slogan</h5>
+                            </li>
+                            <li>
+                                <img src="aj2.jpg" alt="">
+                                <div class="caption-align"></div><h3>this is out tagline</h3>
+                                <h5 class="ligh grey-text text0lighten-3">here's our slogan</h5>
+                            </li>
+                            <li>
+                                <img src="aj3.jpg" alt="">
+                                <div class="caption-align"></div><h3>this is out tagline</h3>
+                                <h5 class="ligh grey-text text0lighten-3">here's our slogan</h5>
+                            </li>
+                            <li>
+                                <img src="aj4.jpg" alt="">
+                                <div class="caption-align"></div>
+                                <h3>this is out tagline</h3>
+                                <h5 class="ligh grey-text text0lighten-3">here's our slogan</h5>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class = "card blue-text">
+                        <pre>
+    &lt;div class="slider"&gt;
+      &lt;ul class="slides"&gt;
+        &lt;li&gt;
+         &lt;img src="https://lorempixel.com/580/250/nature/1"&gt; &lt;!-- random image --&gt;
+        &lt;div class="caption center-align"&gt;
+          &lt;h3&gt;This is our big Tagline!&lt;/h3&gt;
+          &lt;h5 class="light grey-text text-lighten-3"&gt;Here's our small slogan.&lt;/h5&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;img src="https://lorempixel.com/580/250/nature/2"&gt; &lt;!-- random image --&gt;
+        &lt;div class="caption left-align"&gt;
+          &lt;h3&gt;Left Aligned Caption&lt;/h3&gt;
+          &lt;h5 class="light grey-text text-lighten-3"&gt;Here's our small slogan.&lt;/h5&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;img src="https://lorempixel.com/580/250/nature/3"&gt; &lt;!-- random image --&gt;
+        &lt;div class="caption right-align"&gt;
+          &lt;h3&gt;Right Aligned Caption&lt;/h3&gt;
+          &lt;h5 class="light grey-text text-lighten-3"&gt;Here's our small slogan.&lt;/h5&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;img src="https://lorempixel.com/580/250/nature/4"&gt; &lt;!-- random image --&gt;
+        &lt;div class="caption center-align"&gt;
+          &lt;h3&gt;This is our big Tagline!&lt;/h3&gt;
+          &lt;h5 class="light grey-text text-lighten-3"&gt;Here's our small slogan.&lt;/h5&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+                        </pre>                    
+                    </div>
+                    <br>
+                    <div>
+                        <h4>Initialization</h4>
+                        <pre class = "card blue-text text-darken-2">
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems, options);
+    });
+                            
+     // Or with jQuery
+                            
+    $(document).ready(function(){
+        $('.slider').slider();
+    });
+
+                        </pre>
+                    </div>
+                <br>
+                <h4>Options</h4>
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>indicators</td>
+                        <td>Boolean</td>
+                        <td>true</td>
+                        <td>Set to false to hide slide indicators.</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>Number</td>
+                        <td>400</td>
+                        <td>Set height of slider.</td>
+                    </tr>
+                    <tr>
+                        <td>duration</td>
+                        <td>Number</td>
+                        <td>500</td>
+                        <td>Set the duration of the transition animation in ms.</td>
+                    </tr>
+                    <tr>
+                        <td>interval</td>
+                        <td>Number</td>
+                        <td>6000</td>
+                        <td>Set the duration between transitions in ms.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+            <div>
+                <h4>Methods</h4>
+                <p>We have methods to pause, start, move to next and move to previous slide.</p>
+                <blockquote>
+                    <p>Because jQuery is no longer a dependency, all the methods are called on the plugin instance. You can get the plugin
+                        instance like this: </p>
+                        <pre class = "card red-text text-darken-3">
+        var instance = M.Slider.getInstance(elem);
+
+        /* jQuery Method Calls
+        You can still use the old jQuery plugin method calls.
+        But you won't be able to access instance properties.
+                        
+        $('.slider').slider('methodName');
+        $('.slider').slider('methodName', paramName);
+                            */
+                        </pre>
+                </blockquote>
+                <br>
+                <h5 class="method-header">
+                    .pause();
+                </h5>
+                <p>Pause slider autoslide</p>
+                <pre class = "card yellow-text text-darken-2">
+        instance.pause();
+                </pre>
+                <br>
+                <h5 class="method-header">
+                    .start();
+                </h5>
+                <p>Pause slider autoslide</p>
+                <pre class = "card yellow-text text-darken-2">
+        instance.start();
+                </pre>
+                <br>
+                <h5 class="method-header">
+                    .next();
+                </h5>
+                <p>Pause slider autoslide</p>
+                <pre class = "card yellow-text text-darken-2">
+        instance.next();
+                </pre>
+                <br>
+                <h5 class="method-header">
+                    .prev();
+                </h5>
+                <p>Pause slider autoslide</p>
+                <pre class = "card yellow-text text-darken-2">
+        instance.previous();
+                </pre>
+                <br>
+                <h5 class="method-header">
+                    .destroy();
+                </h5>
+                <p>Pause slider autoslide</p>
+                <pre class = "card yellow-text text-darken-2">
+        instance.destroy();
+                </pre>
+                <br><br>
+                <h4>Properties</h4>
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>el</td>
+                        <td>Element</td>
+                        <td>The DOM element the plugin was initialized with.</td>
+                    </tr>
+                    <tr>
+                        <td>options</td>
+                        <td>Object</td>
+                        <td>The options the instance was initialized with.</td>
+                    </tr>
+                    <tr>
+                        <td>activeIndex</td>
+                        <td>Number</td>
+                        <td>Index of current slide.</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <h4>Fullscreen Slider</h4>
+                <p>You can easliy make this slider a fullscreen slider by adding the class
+                    <code class=" language-markup">fullscreen</code> to the slider div. Here's a quick demo.</p>
+                <a href="https://www.facebook.com/Wenzxc/" class="btn-large waves-effect waves-light">OPEN DEMO</a>
+            </div>
+<div style="height: 1000px;"></div>
+<script
+src="https://code.jquery.com/jquery-3.7.1.min.js"
+integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.materialboxed').materialbox({        inDuration: 1000,
+        outDuration: 1000
+    });
+    $('.slider').slider();
+    });
+</script>
+        </div>
+    </div>
+</body>
+</html>
